@@ -1,6 +1,7 @@
 #include "targets/platform_implementations/st/PlatformImpl.hpp"
 
-// Referenced by the hal_st clock configuration; the F429I-DISC1 has an 8 MHz HSE.
+// Referenced by the hal_st clock configuration. All currently supported ST board
+// presets (see CMakePresets.json) have an 8 MHz HSE.
 unsigned int hse_value = 8'000'000;
 
 namespace application

@@ -13,6 +13,18 @@ target_link_libraries(embedded_scaffold.platform_st PUBLIC
     services.tracer
 )
 
+# Select the board-specific default clock configuration. Each supported ST board
+# preset (see CMakePresets.json) sets TARGET_MCU, which maps to the matching
+# hal_st clock header/init function.
+target_compile_definitions(embedded_scaffold.platform_st PRIVATE
+    $<$<STREQUAL:${TARGET_MCU},stm32f407>:SCAFFOLD_ST_CLOCK_HEADER="hal_st/stm32fxxx/DefaultClockDiscoveryF407G.hpp">
+    $<$<STREQUAL:${TARGET_MCU},stm32f407>:SCAFFOLD_ST_CLOCK_INIT=ConfigureDefaultClockDiscoveryF407G>
+    $<$<STREQUAL:${TARGET_MCU},stm32f429>:SCAFFOLD_ST_CLOCK_HEADER="hal_st/stm32fxxx/DefaultClockNucleoF429ZI.hpp">
+    $<$<STREQUAL:${TARGET_MCU},stm32f429>:SCAFFOLD_ST_CLOCK_INIT=ConfigureDefaultClockNucleoF429ZI>
+    $<$<STREQUAL:${TARGET_MCU},stm32h563>:SCAFFOLD_ST_CLOCK_HEADER="hal_st/stm32fxxx/DefaultClockNucleoH563ZI.hpp">
+    $<$<STREQUAL:${TARGET_MCU},stm32h563>:SCAFFOLD_ST_CLOCK_INIT=ConfigureDefaultClockNucleoH563ZI>
+)
+
 target_sources(embedded_scaffold.platform_st PRIVATE
     PlatformImpl.hpp
     PlatformImpl.cpp
