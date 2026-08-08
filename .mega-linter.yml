@@ -15,6 +15,10 @@ DISABLE_LINTERS:
   - REPOSITORY_GITLEAKS
   - REPOSITORY_KICS
   - REPOSITORY_SEMGREP
+  # No package manifests/lockfiles (package.json, requirements.txt, go.mod, ...)
+  # exist in this repo, so osv-scanner always errors with
+  # "No package sources found" instead of reporting on dependencies.
+  - REPOSITORY_OSV_SCANNER
   - SPELL_CSPELL
   - JSON_V8R
   - ACTION_ZIZMOR
