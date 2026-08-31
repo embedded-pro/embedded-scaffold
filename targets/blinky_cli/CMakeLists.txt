@@ -18,7 +18,7 @@ target_sources(embedded_scaffold.blinky_cli.main PRIVATE
 # The host build links as a normal executable.
 if(TARGET_MCU_VENDOR STREQUAL "st")
     halst_target_default_linker_scripts(embedded_scaffold.blinky_cli.main)
-    halst_target_default_init(embedded_scaffold.blinky_cli.main)
+    halst_target_bringup(embedded_scaffold.blinky_cli.main)
     emil_generate_artifacts(TARGET embedded_scaffold.blinky_cli.main LST MAP BIN HEX)
 elseif(TARGET_MCU_VENDOR STREQUAL "ti")
     hal_ti_target_default_linker_scripts(embedded_scaffold.blinky_cli.main)
