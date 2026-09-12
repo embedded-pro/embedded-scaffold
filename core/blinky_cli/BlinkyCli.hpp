@@ -20,7 +20,7 @@ namespace application
         explicit BlinkyCli(platform::Platform& platform);
 
     private:
-        class CliCommands
+        class CliCommands final
             : public services::TerminalCommands
         {
         public:

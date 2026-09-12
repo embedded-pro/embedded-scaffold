@@ -10,7 +10,7 @@
 namespace
 {
     // Minimal GpioPin so DebugLed has a real output to drive in the host test.
-    class GpioStub
+    class GpioStub final
         : public hal::GpioPin
     {
     public:

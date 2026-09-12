@@ -9,3 +9,6 @@ install/
 .venv/
 output/
 cucumber.toml
+__pycache__/
+*.py[cod]
+.claude/plans/

@@ -17,7 +17,7 @@ namespace application
     // - Status LED  : on-board green LED (PF3), via the LaunchPad BSP
     // - CLI UART    : UART0, TX = PA1, RX = PA0 (115200 8N1), routed to the on-board
     //                 ICDI USB virtual COM port — no extra wiring needed.
-    class PlatformImpl
+    class PlatformImpl final
         : public platform::Platform
     {
     public:

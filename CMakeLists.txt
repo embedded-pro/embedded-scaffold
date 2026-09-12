@@ -8,6 +8,7 @@ option(CMAKE_COMPILE_WARNING_AS_ERROR "Enable warnings-as-error" On)
 option(SCAFFOLD_INCLUDE_DEFAULT_INIT "Include default initialization code; turn off when providing custom initialization" On)
 option(SCAFFOLD_BUILD_TESTS "Enable build of the examples" Off)
 option(SCAFFOLD_BUILD_SIMULATOR "Enable build of the Qt simulator applications" Off)
+option(SCAFFOLD_BUILD_HIL_TESTS "Build hardware-in-the-loop tests" Off)
 option(SCAFFOLD_EMBEDDED_BUILD "Building for an embedded target" Off)
 
 if (SCAFFOLD_BUILD_TESTS)
@@ -40,6 +41,9 @@ if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
     set(CMAKE_C_FLAGS_DEBUG "-Og -g" CACHE STRING "C Debug flags" FORCE)
     set(CMAKE_CXX_FLAGS_DEBUG "-Og -g" CACHE STRING "C++ Debug flags" FORCE)
 endif()
+
+include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/MarkIncludesSystem.cmake")
+include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/CompilerWarnings.cmake")
 
 set_directory_properties(PROPERTY USE_FOLDERS ON)
 
@@ -85,6 +89,14 @@ if (DEFINED TARGET_MCU_VENDOR)
 endif()
 
 add_subdirectory(infra/numerical-toolbox)
+
+# Ordering is load-bearing. Both calls must sit after every submodule and FetchContent
+# addition -- otherwise dependencies such as cucumber_cpp are missed -- and before
+# add_subdirectory(core), or this project's own targets get marked SYSTEM and the warnings
+# these flags exist to catch are silenced. See cmake/MarkIncludesSystem.cmake.
+scaffold_mark_includes_system("${CMAKE_CURRENT_SOURCE_DIR}")
+scaffold_enable_project_warnings()
+
 add_subdirectory(core)
 add_subdirectory(targets)
 

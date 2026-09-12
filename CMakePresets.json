@@ -16,7 +16,6 @@
                 "CMAKE_COMPILE_WARNING_AS_ERROR": "On",
                 "CMAKE_C_COMPILER_LAUNCHER": "ccache",
                 "CMAKE_CXX_COMPILER_LAUNCHER": "ccache",
-                "SCAFFOLD_AUTO_TRANSITION_POLICY": false,
                 "SCAFFOLD_EMBEDDED_BUILD": false
             }
         },
@@ -303,6 +302,11 @@
             "execution": {
                 "noTestsAction": "error",
                 "stopOnFailure": true
+            },
+            "filter": {
+                "exclude": {
+                    "label": "hardware"
+                }
             }
         },
         {
