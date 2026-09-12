@@ -53,7 +53,7 @@ jobs:
             echo "::error::SIL integration test executable not found"
             exit 1
           fi
-          $sil_test --format summary pretty junit:sil-test-report.xml -- integration_tests/software_in_the_loop/features
+          $sil_test --format summary pretty junit:sil-test-report.xml -- integration_tests/features
       - name: Generate SIL test summary
         if: always()
         run: |

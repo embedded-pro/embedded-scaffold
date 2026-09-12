@@ -8,6 +8,7 @@ option(CMAKE_COMPILE_WARNING_AS_ERROR "Enable warnings-as-error" On)
 option(SCAFFOLD_INCLUDE_DEFAULT_INIT "Include default initialization code; turn off when providing custom initialization" On)
 option(SCAFFOLD_BUILD_TESTS "Enable build of the examples" Off)
 option(SCAFFOLD_BUILD_SIMULATOR "Enable build of the Qt simulator applications" Off)
+option(SCAFFOLD_BUILD_HIL_TESTS "Build hardware-in-the-loop tests" Off)
 option(SCAFFOLD_EMBEDDED_BUILD "Building for an embedded target" Off)
 
 if (SCAFFOLD_BUILD_TESTS)
