@@ -13,7 +13,7 @@ namespace application
     // Host implementation of platform::Platform. It uses stubs and host facilities
     // (a wall-clock timer service, a loopback serial channel) so the same
     // application can be built and exercised off-target.
-    class PlatformImpl
+    class PlatformImpl final
         : public platform::Platform
     {
     public:
@@ -24,7 +24,7 @@ namespace application
 
     private:
         // A do-nothing GPIO so DebugLed has an output to drive on the host.
-        class GpioStub
+        class GpioStub final
             : public hal::GpioPin
         {
         public:

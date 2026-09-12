@@ -5,7 +5,7 @@
 
 namespace example
 {
-    class AccumulatorImpl
+    class AccumulatorImpl final
         : public Accumulator
     {
     public:

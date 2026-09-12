@@ -21,7 +21,7 @@ namespace application
     // - CLI UART    : USART1, TX = PA9, RX = PA10 (115200 8N1). Boards without a
     //                 virtual COM port on this UART require a USB-UART adapter
     //                 connected to PA9/PA10/GND.
-    class PlatformImpl
+    class PlatformImpl final
         : public platform::Platform
     {
     public:
