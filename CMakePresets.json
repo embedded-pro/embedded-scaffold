@@ -302,6 +302,11 @@
             "execution": {
                 "noTestsAction": "error",
                 "stopOnFailure": true
+            },
+            "filter": {
+                "exclude": {
+                    "label": "hardware"
+                }
             }
         },
         {
