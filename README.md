@@ -138,7 +138,7 @@ add new components.
 | [Example Requirements](documentation/requirements/example/example.yaml) | Example requirements (validated against `documentation/tools/requirement.schema.json`) |
 | [Documentation Templates](documentation/templates/) | Starting points for new architecture/design/theory/requirements docs |
 | [Performance Optimization Guide](documentation/performance-optimization/README.md) | Embedded performance techniques, assembly analysis, cycle budgets |
-| [AI Agent Instructions](CLAUDE.md) | Development guidelines, patterns, and constraints |
+| [AI Agent Instructions](AGENTS.md) | Development guidelines, patterns, and constraints |
 
 ## License
 
