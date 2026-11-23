@@ -1,5 +1,4 @@
-#ifndef CORE_BLINKY_CLI_BLINKY_CLI_HPP
-#define CORE_BLINKY_CLI_BLINKY_CLI_HPP
+#pragma once
 
 #include "core/platform_abstraction/Platform.hpp"
 #include "services/peripheral/DebugLed.hpp"
@@ -7,13 +6,6 @@
 
 namespace application
 {
-    // Portable application logic: blinks the status LED and serves a small
-    // command-line interface over the platform's serial channel.
-    //
-    // It depends ONLY on platform::Platform, so it is compiled once and runs on
-    // every target (TI, ST) and on the host, where it is unit-tested against a
-    // PlatformMock. The board-specific wiring lives in
-    // targets/platform_implementations/<platform>.
     class BlinkyCli
     {
     public:
@@ -40,5 +32,3 @@ namespace application
         CliCommands commands;
     };
 }
-
-#endif

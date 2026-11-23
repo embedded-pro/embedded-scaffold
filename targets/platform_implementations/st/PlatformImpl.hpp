@@ -1,5 +1,4 @@
-#ifndef TARGETS_PLATFORM_IMPLEMENTATIONS_ST_PLATFORM_IMPL_HPP
-#define TARGETS_PLATFORM_IMPLEMENTATIONS_ST_PLATFORM_IMPL_HPP
+#pragma once
 
 #include "core/platform_abstraction/Platform.hpp"
 #include "hal_st/instantiations/StmEventInfrastructure.hpp"
@@ -12,15 +11,7 @@
 
 namespace application
 {
-    // STM32 implementation of platform::Platform, shared by all supported ST board
-    // presets (see CMakePresets.json). The default clock configuration is selected
-    // per board via SCAFFOLD_ST_CLOCK_HEADER/SCAFFOLD_ST_CLOCK_INIT (set in
-    // targets/platform_implementations/st/CMakeLists.txt based on TARGET_MCU).
-    //
-    // - Status LED  : LD3 (green) on PG13
-    // - CLI UART    : USART1, TX = PA9, RX = PA10 (115200 8N1). Boards without a
-    //                 virtual COM port on this UART require a USB-UART adapter
-    //                 connected to PA9/PA10/GND.
+    // Boards without a virtual COM port on USART1 (PA9/PA10) need a USB-UART adapter.
     class PlatformImpl final
         : public platform::Platform
     {
@@ -31,8 +22,7 @@ namespace application
         void Run() override;
 
     private:
-        // Initialises the STM32 HAL and system clock before any peripheral member
-        // is constructed. Declared first so its constructor runs first.
+        // Declared first: HAL and clock must be up before any peripheral is constructed.
         struct ClockInit
         {
             ClockInit()
@@ -53,5 +43,3 @@ namespace application
         services::TracerToStream tracer{ stream };
     };
 }
-
-#endif
