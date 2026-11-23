@@ -1,5 +1,4 @@
-#ifndef TARGETS_PLATFORM_IMPLEMENTATIONS_HOST_PLATFORM_IMPL_HPP
-#define TARGETS_PLATFORM_IMPLEMENTATIONS_HOST_PLATFORM_IMPL_HPP
+#pragma once
 
 #include "core/platform_abstraction/Platform.hpp"
 #include "hal/generic/TimerServiceGeneric.hpp"
@@ -10,9 +9,6 @@
 
 namespace application
 {
-    // Host implementation of platform::Platform. It uses stubs and host facilities
-    // (a wall-clock timer service, a loopback serial channel) so the same
-    // application can be built and exercised off-target.
     class PlatformImpl final
         : public platform::Platform
     {
@@ -64,5 +60,3 @@ namespace application
         services::TracerToStream tracer{ stream };
     };
 }
-
-#endif
