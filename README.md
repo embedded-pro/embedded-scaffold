@@ -130,15 +130,15 @@ add new components.
 
 ## Documentation
 
-| Document | Description |
-|---|---|
-| [System Architecture](documentation/architecture/system.md) | Example architecture document |
-| [Example Component Design](documentation/design/example-component.md) | Example design document |
-| [Running Sum (Theory)](documentation/theory/example-topic.md) | Example theory document |
-| [Example Requirements](documentation/requirements/example/example.yaml) | Example requirements (validated against `documentation/tools/requirement.schema.json`) |
-| [Documentation Templates](documentation/templates/) | Starting points for new architecture/design/theory/requirements docs |
-| [Performance Optimization Guide](documentation/performance-optimization/README.md) | Embedded performance techniques, assembly analysis, cycle budgets |
-| [AI Agent Instructions](AGENTS.md) | Development guidelines, patterns, and constraints |
+| Document                                                                           | Description                                                                            |
+|------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| [System Architecture](documentation/architecture/system.md)                        | Example architecture document                                                          |
+| [Example Component Design](documentation/design/example-component.md)              | Example design document                                                                |
+| [Running Sum (Theory)](documentation/theory/example-topic.md)                      | Example theory document                                                                |
+| [Example Requirements](documentation/requirements/example/example.yaml)            | Example requirements (validated against `documentation/tools/requirement.schema.json`) |
+| [Documentation Templates](documentation/templates/)                                | Starting points for new architecture/design/theory/requirements docs                   |
+| [Performance Optimization Guide](documentation/performance-optimization/README.md) | Embedded performance techniques, assembly analysis, cycle budgets                      |
+| [AI Agent Instructions](AGENTS.md)                                                 | Development guidelines, patterns, and constraints                                      |
 
 ## License
 

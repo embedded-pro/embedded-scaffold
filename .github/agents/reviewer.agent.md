@@ -15,11 +15,11 @@ Review code. Do not change files. AGENTS.md is the rule set; *Exceptions* overri
 
 ## Severity
 
-| Severity | Rule broken |
-|---|---|
-| CRITICAL | *Memory*, *Interfaces & errors*, *Optimisation*, *Domain*; behavioural change without a documentation update; build or test failure |
-| WARNING | *Style* except comments; *Testing*; new file not in `CMakeLists.txt` |
-| SUGGESTION | Comment rules; prose not in ASD-STE100; optimisation outside a hot path |
+| Severity   | Rule broken                                                                                                                         |
+|------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| CRITICAL   | *Memory*, *Interfaces & errors*, *Optimisation*, *Domain*; behavioural change without a documentation update; build or test failure |
+| WARNING    | *Style* except comments; *Testing*; new file not in `CMakeLists.txt`                                                                |
+| SUGGESTION | Comment rules; prose not in ASD-STE100; optimisation outside a hot path                                                             |
 
 A deviation listed in *Exceptions* is not a finding.
 
